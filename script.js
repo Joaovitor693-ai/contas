@@ -58,12 +58,12 @@ function bloquearCopia() {
 }
 
 function verificarParImpar() {
-    //console.log("Vou executar a função verificarParImpar.")
+
     const numero = parseInt(document.getElementById("numParImpar").value);
-    //console.log(numero);
+
     const resultadoParImpar = document.getElementById("resultadoParImpar");
     let resto = numero % 2;
-    //console.log(resto);
+
     if (resto == 0) {
         resultadoParImpar.innerHTML = "O número é par!"
     }
@@ -85,24 +85,42 @@ function calcularMedia() {
     let media = (nota1 + nota2 + nota3) / 3;
 
     resultadoMedia.innerHTML = `a media das notas é: ${media.toFixed(2)}   `;
-  
- 
-    
-    if(media>=7){
+
+
+
+    if (media >= 7) {
         resultadoMedia = "aprovado"
     }
-    else{
-       resultadoMedia = "reprovado"
+    else {
+        resultadoMedia = "reprovado"
     }
 }
 
 
 function somarPares() {
     const numero = parseInt(document.getElementById("numSomaPares").value);
-    const resultadoSomaPares = document.getElementById("resultadoSomaPares")
-    let resto = numero % 2
+    let soma = 0;
 
+    if (numero > 0) {
+        for (let i = 2; i <= numero; i += 2) {
+            soma += i;
+        }
+        document.getElementById("resultadoSomaPares").innerText = ` a soma dos números pares até ${numero} é:${soma}`;
+    } else {
+        document.getElementById("resultadoSomaPares").innerText = "por favor digite um número inteiro positivo";
+    }
 
+}
 
+function validarLogin() {
+    const usuario = document.getElementById("username").value;
+    const senha = document.getElementById("password").value;
+
+    if (usuario === "admin" && senha === "1234") {
+
+        document.getElementByI("resultadoLogin").innerText = "acesso permitido"
+    } else {
+        document.getElementById("resultadoLogin").innerText = "acesso negado, usuario ou senha incorretos."
+    }
 
 }
