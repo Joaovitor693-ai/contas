@@ -124,3 +124,11 @@ function validarLogin() {
     }
 
 }
+
+function calcularFatorial() {
+    const num = parseInt(document.getElementById("numFatorial").value);
+    const resultado = fatorial(num)
+    document.getElementById("resultadoFatorial").innerText = resultado;
+
+
+}
